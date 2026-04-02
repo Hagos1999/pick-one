@@ -42,13 +42,16 @@
       loadPartial('header-placeholder', 'partials/header.html'),
       loadPartial('footer-placeholder', 'partials/footer.html'),
     ]).then(function () {
-      // After injection, reinitialise active link highlighting
+      // Re-initialise everything that depends on the injected header/footer
       if (window.pickone && window.pickone.highlightActiveLinks) {
         window.pickone.highlightActiveLinks();
       }
-      // Reinitialise scroll handler for the new header
       if (window.pickone && window.pickone.onScroll) {
         window.pickone.onScroll();
+      }
+      // CRITICAL: attach hamburger events now that the button exists in the DOM
+      if (window.pickone && window.pickone.initHamburger) {
+        window.pickone.initHamburger();
       }
     });
   }

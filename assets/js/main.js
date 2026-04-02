@@ -22,23 +22,31 @@
   onScroll(); // run once on load
 
   // ── HAMBURGER MENU ────────────────────────────────────────────
-  const hamburger = document.querySelector('.nav-hamburger');
-  const mobileNav = document.querySelector('.nav-mobile');
+  // Wrapped in a function because the header is injected asynchronously
+  // via fetch() in components.js — the elements don't exist on first run.
+  function initHamburger() {
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileNav = document.querySelector('.nav-mobile');
 
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', function () {
+    if (!hamburger || !mobileNav) return;
+
+    // Remove any existing listener to avoid double-binding on re-init
+    hamburger.replaceWith(hamburger.cloneNode(true));
+    const freshHamburger = document.querySelector('.nav-hamburger');
+
+    freshHamburger.addEventListener('click', function () {
       const isOpen = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
+      freshHamburger.classList.toggle('open', isOpen);
+      freshHamburger.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu on link click
+    // Close menu on nav link click
     mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        freshHamburger.classList.remove('open');
+        freshHamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -48,11 +56,11 @@
       if (
         mobileNav.classList.contains('open') &&
         !mobileNav.contains(e.target) &&
-        !hamburger.contains(e.target)
+        !freshHamburger.contains(e.target)
       ) {
         mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        freshHamburger.classList.remove('open');
+        freshHamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
     });
@@ -74,8 +82,9 @@
 
   highlightActiveLinks();
 
-  // Export so components.js can call after partial injection
+  // Export for re-init after partial injection
   window.pickone = window.pickone || {};
   window.pickone.highlightActiveLinks = highlightActiveLinks;
-  window.pickone.onScroll = onScroll;
+  window.pickone.onScroll            = onScroll;
+  window.pickone.initHamburger        = initHamburger;
 })();
