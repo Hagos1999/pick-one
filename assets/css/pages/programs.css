@@ -1,0 +1,215 @@
+/* ============================================================
+   programs.css — Programs page styles
+   Pick-One Initiative
+   ============================================================ */
+
+/* 1. PROGRAM PILLAR SECTIONS
+   ============================================================ */
+.pillar-section {
+  padding-block: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pillar-section:last-child {
+  border-bottom: none;
+}
+
+.pillar-section.bg-alt {
+  background-color: var(--color-mint-bg);
+}
+
+.pillar-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.pillar-layout.reverse .pillar-content {
+  order: 2;
+}
+
+.pillar-layout.reverse .pillar-visual {
+  order: 1;
+}
+
+.pillar-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.pillar-text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar-text:last-of-type {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 2. PILLAR VISUAL CARD
+   ============================================================ */
+.pillar-visual-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.pillar-visual-emoji {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: var(--spacing-md);
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.pillar-stat-highlight {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.pillar-stat-label {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.pillar-stat-sublabel {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+/* 3. OBJECTIVE CALLOUT
+   ============================================================ */
+.objective-callout {
+  background-color: var(--color-mint-bg);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.objective-callout-icon {
+  font-size: 1.25rem;
+  margin-right: 0.4em;
+}
+
+.objective-callout-text {
+  font-size: 0.9375rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* 4. TARGET POPULATION SECTION
+   ============================================================ */
+.target-population {
+  background-color: var(--color-green-bg);
+  padding-block: var(--spacing-xl);
+}
+
+.target-population .section-title {
+  color: var(--color-white);
+}
+
+.target-population .section-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.target-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.target-group-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.target-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.target-group-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.target-group-label {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* 5. VISUAL SEPARATOR
+   ============================================================ */
+.pillar-separator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-block: var(--spacing-md);
+}
+
+.pillar-separator-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.pillar-separator-icon {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+}
+
+/* 6. RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .target-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pillar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-layout.reverse .pillar-content,
+  .pillar-layout.reverse .pillar-visual {
+    order: unset;
+  }
+
+  .target-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

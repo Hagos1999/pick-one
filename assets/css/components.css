@@ -1,0 +1,741 @@
+/* ============================================================
+   components.css — Buttons, cards, stat blocks, forms, placeholders
+   Pick-One Initiative
+   ============================================================ */
+
+/* 1. BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.75em 1.75em;
+  border-radius: var(--border-radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.btn-donate {
+  background-color: #f7b733; /* Golden yellow for urgency and contrast */
+  color: var(--color-text);
+  border: 2px solid #f7b733;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(247, 183, 51, 0.4);
+}
+
+.btn-donate:hover {
+  background-color: #fc9d03;
+  border-color: #fc9d03;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(252, 157, 3, 0.5);
+  color: var(--color-text);
+}
+
+.btn-donate:active {
+  transform: translateY(0);
+}
+
+.btn-sm {
+  font-size: 0.8125rem;
+  padding: 0.55em 1.25em;
+}
+
+.btn-lg {
+  font-size: 1.0625rem;
+  padding: 0.9em 2.25em;
+}
+
+/* Arrow icon on buttons */
+.btn-arrow {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* 2. PROGRAM CARDS
+   ============================================================ */
+.program-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-card-icon {
+  font-size: 2.5rem;
+  background-color: var(--color-mint-bg);
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.program-card-body {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.program-card-text {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.program-card-footer {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+/* 3. STAT BLOCKS
+   ============================================================ */
+.stat-block {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  display: block;
+}
+
+.stat-number.text-white-num {
+  color: var(--color-white);
+}
+
+.stat-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.stat-sublabel {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.stat-block.on-dark .stat-number,
+.stat-block.on-dark .stat-label {
+  color: var(--color-white);
+}
+
+.stat-block.on-dark .stat-sublabel {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Stat row with separators */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.stat-row .stat-block {
+  border-right: 1px solid var(--color-border);
+}
+
+.stat-row .stat-block:last-child {
+  border-right: none;
+}
+
+/* 4. STORY CARDS
+   ============================================================ */
+.story-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--color-border);
+}
+
+.story-card-body {
+  padding: var(--spacing-lg);
+}
+
+.story-card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.story-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.story-card-excerpt {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* 5. PHOTO PLACEHOLDERS
+   ============================================================ */
+.photo-placeholder {
+  background-color: var(--color-mint-bg);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--border-radius-lg);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+  padding: var(--spacing-lg);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.photo-placeholder:hover {
+  border-color: var(--color-accent);
+  background-color: #ddf0e7;
+}
+
+.photo-placeholder-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.photo-placeholder-label {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.photo-placeholder-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* 6. FORMS
+   ============================================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.85em 1.1em;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(91, 191, 138, 0.2);
+}
+
+.form-input.error,
+.form-textarea.error {
+  border-color: #d94040;
+  box-shadow: 0 0 0 3px rgba(217, 64, 64, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #d94040;
+  font-weight: 500;
+}
+
+/* 7. BADGE / TAG COMPONENTS
+   ============================================================ */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border-radius: var(--border-radius-pill);
+}
+
+.badge-green {
+  background-color: var(--color-mint-bg);
+  color: var(--color-secondary);
+}
+
+.badge-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* 8. ICON CIRCLES
+   ============================================================ */
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.icon-circle-green {
+  background-color: var(--color-mint-bg);
+  color: var(--color-primary);
+}
+
+.icon-circle-white {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+/* 9. CTA BANNER
+   ============================================================ */
+.cta-banner {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+}
+
+.cta-banner .section-title {
+  color: var(--color-white);
+}
+
+.cta-banner .section-text {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: var(--spacing-sm);
+}
+
+.cta-banner .btn-group {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
+}
+
+/* 10. SUCCESS MESSAGE
+    ============================================================ */
+.form-success {
+  display: none;
+  background-color: var(--color-mint-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
+
+.form-success.visible {
+  display: block;
+}
+
+/* 11. OBJECTIVE LIST
+    ============================================================ */
+.objective-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.objective-item {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.objective-item-check {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.objective-item-text {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+/* 11. VIDEO BACKGROUNDS & CAROUSEL
+    ============================================================ */
+
+/* Video Backgrounds */
+.video-bg-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Keep content above video */
+}
+
+.video-bg-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Add an overlay so text remains readable over the video */
+  background: rgba(26, 61, 43, 0.75); 
+  z-index: -1;
+}
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -2;
+  object-fit: cover;
+}
+
+/* Hero overlay pattern (opacity belongs in CSS, not inline style) */
+.hero-bg-pattern {
+  opacity: 0.35;
+}
+
+/* Partner Carousel */
+.partner-carousel-section {
+  background-color: var(--color-bg);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: max-content;
+  animation: scrollCarousel 30s linear infinite;
+}
+
+.partner-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.partner-logo {
+  height: 48px;
+  width: auto;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: var(--transition);
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@keyframes scrollCarousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls half the track (which we will duplicate) */
+}
+
+/* 12. ISLAMIC QUOTE / AYAH / HADITH BLOCKS
+    ============================================================ */
+
+/* Full-width ayah banner */
+.ayah-banner {
+  background-color: var(--color-green-bg);
+  border-top: 3px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+}
+
+.ayah-arabic {
+  font-family: 'Amiri', 'Scheherazade New', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  direction: rtl;
+  color: var(--color-accent);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Smaller size for inline prose-style Hadith quotes */
+.ayah-arabic--sm {
+  font-size: 1.25rem;
+  direction: ltr;
+}
+
+.ayah-translation {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.75;
+  margin-bottom: var(--spacing-sm);
+}
+
+.ayah-source {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+/* Inline hadith callout (inside a section) */
+.hadith-callout {
+  background-color: var(--color-mint-bg);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-block: var(--spacing-lg);
+}
+
+.hadith-callout-text {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-primary);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.hadith-callout-source {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Hadith callout on a dark/video hero background */
+.hadith-callout--hero {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+  display: inline-block;
+  text-align: left;
+  max-width: 620px;
+}
+
+.hadith-callout-text--large {
+  font-family: 'Amiri', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hadith-callout-source--accent {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Hadith card (in a grid) */
+.hadith-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hadith-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hadith-card-icon {
+  font-size: 1.75rem;
+}
+
+.hadith-card-text {
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.hadith-card-source {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Footer hadith line */
+.footer-hadith {
+  font-style: italic;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  margin-top: var(--spacing-md);
+  max-width: 300px;
+}
+
+.footer-hadith-icon {
+  margin-right: 0.3em;
+}
+
+/* 13. RESPONSIVE
+    ============================================================ */
+@media (max-width: 768px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-row .stat-block {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .stat-row .stat-block:last-child {
+    border-bottom: none;
+  }
+
+  .cta-banner .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}

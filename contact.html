@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — Pick-One Initiative</title>
+    <meta name="description"
+        content="Get in touch with Pick-One. Partner with us, fund a programme, or simply ask how you can help." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Us — Pick-One Initiative" />
+    <meta property="og:description" content="Get in touch with Pick-One. Partner with us, fund a programme, or simply ask how you can help." />
+    <meta property="og:image" content="assets/images/logo.jpeg" />
+    <meta property="og:url" content="https://pick-one.vercel.app/contact" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us — Pick-One Initiative" />
+    <meta name="twitter:description" content="Get in touch with Pick-One. Partner with us, fund a programme, or simply ask how you can help." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/contact.css" />
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main id="main-content">
+
+        <!-- ═══════════════════ PAGE HERO ═══════════════════ -->
+        <section class="page-hero" aria-labelledby="contact-heading">
+            <div class="container">
+                <span class="section-tag is-white">Reach Out</span>
+                <h1 id="contact-heading" class="section-title">Get In Touch</h1>
+                <p class="section-text max-w-md mx-auto">
+                    Whether you're a potential partner, a donor, a volunteer, or
+                    simply someone who wants to know more — we'd love to hear from you.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ CONTACT LAYOUT ═══════════════════ -->
+        <section class="section-space bg-default" aria-label="Contact form and information">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- FORM -->
+                    <div class="contact-form-wrapper reveal">
+                        <h2 class="contact-form-title">Send Us a Message</h2>
+                        <p class="contact-form-subtitle">
+                            Fill in the form below and we'll get back to you as soon
+                            as we can.
+                        </p>
+
+                        <form class="contact-form" id="contact-form" novalidate>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-name">Full Name</label>
+                                    <input class="form-input" type="text" id="contact-name" name="name"
+                                        placeholder="Your full name" autocomplete="name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-email">Email Address</label>
+                                    <input class="form-input" type="email" id="contact-email" name="email"
+                                        placeholder="your@email.com" autocomplete="email" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-subject">Subject</label>
+                                <input class="form-input" type="text" id="contact-subject" name="subject"
+                                    placeholder="e.g. Partnership enquiry, Funding, Volunteering…" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-message">Message</label>
+                                <textarea class="form-textarea" id="contact-message" name="message"
+                                    placeholder="Tell us about yourself and how you'd like to get involved…"
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary btn-lg" id="submit-btn">
+                                Send Message <span class="btn-arrow" aria-hidden="true">→</span>
+                            </button>
+
+                        </form>
+
+                        <div class="form-success" id="form-success" role="alert" tabindex="-1">
+                            ✅ Thank you! Your message has been received. We'll be in touch soon.
+                        </div>
+                    </div>
+
+                    <!-- INFO -->
+                    <div class="contact-info-wrapper reveal reveal-delay-1">
+
+                        <div class="contact-info-card">
+                            <h2 class="contact-info-card-title">Contact Information</h2>
+                            <div class="contact-info-items">
+                                <div class="contact-info-item">
+                                    <span class="contact-info-item-icon" aria-hidden="true">📧</span>
+                                    <div class="contact-info-item-content">
+                                        <div class="contact-info-item-label">Email</div>
+                                        <div class="contact-info-item-value">info@pick-one.org</div>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <span class="contact-info-item-icon" aria-hidden="true">📞</span>
+                                    <div class="contact-info-item-content">
+                                        <div class="contact-info-item-label">Phone</div>
+                                        <div class="contact-info-item-value">+234 800 000 0000</div>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <span class="contact-info-item-icon" aria-hidden="true">📍</span>
+                                    <div class="contact-info-item-content">
+                                        <div class="contact-info-item-label">Location</div>
+                                        <div class="contact-info-item-value">Nigeria</div>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <span class="contact-info-item-icon" aria-hidden="true">🕐</span>
+                                    <div class="contact-info-item-content">
+                                        <div class="contact-info-item-label">Response Time</div>
+                                        <div class="contact-info-item-value">We aim to reply within 48 hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="funding-context">
+                            <h3 class="funding-context-title">💼 Funding &amp; Partnership</h3>
+                            <p class="funding-context-text">
+                                Pick-One is currently seeking funding support of $50,000 to
+                                expand across all three programme pillars — sponsoring more
+                                students, training more young adults, and drilling wells in
+                                at least five additional communities.
+                            </p>
+                            <p class="funding-context-text mt-sm">
+                                If you represent an organisation, foundation, or are a
+                                high-impact individual donor, we would love to discuss a
+                                partnership. Our partners invest in real, measurable outcomes —
+                                every naira and dollar is tracked and reported.
+                            </p>
+                            <p class="funding-context-text mt-sm">
+                                To request a funding proposal, detailed impact report, or to
+                                arrange a call with our team, please use the contact form
+                                or reach us directly via email.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ HOW WE USE FUNDS ═══════════════════ -->
+        <section class="section-space bg-mint" aria-labelledby="funds-heading">
+            <div class="container">
+                <div class="section-header centered reveal">
+                    <span class="section-tag is-dark">Transparency</span>
+                    <h2 id="funds-heading" class="section-title mt-sm">Where Your Support Goes</h2>
+                    <p class="section-text mt-md max-w-md mx-auto">
+                        We are committed to full transparency in how contributions are
+                        used. Every programme has defined outcomes and public accountability.
+                    </p>
+                </div>
+
+                <div class="grid-3 mt-xl">
+                    <div class="program-card reveal reveal-delay-1">
+                        <div class="program-card-body">
+                            <div class="program-card-icon" aria-hidden="true">📚</div>
+                            <h3 class="program-card-title">Educational Sponsorships</h3>
+                            <p class="program-card-text">
+                                School fees, learning materials, exam registration, and
+                                mentorship sessions for sponsored students.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="program-card reveal reveal-delay-2">
+                        <div class="program-card-body">
+                            <div class="program-card-icon" aria-hidden="true">🛠️</div>
+                            <h3 class="program-card-title">Vocational Training</h3>
+                            <p class="program-card-text">
+                                Training fees, tools, certification costs, and start-up
+                                support grants for graduates entering self-employment.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="program-card reveal reveal-delay-3">
+                        <div class="program-card-body">
+                            <div class="program-card-icon" aria-hidden="true">💧</div>
+                            <h3 class="program-card-title">Water &amp; Rural Access</h3>
+                            <p class="program-card-text">
+                                Well drilling, community training in maintenance, follow-up
+                                visit costs, and equipment for new communities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/pages/contact.js"></script>
+</body>
+
+</html>

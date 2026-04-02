@@ -1,0 +1,64 @@
+<!-- partials/footer.html — shared footer markup -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" aria-label="Pick-One Home">
+                    <img src="assets/images/logo.jpeg" alt="Pick-One Initiative" class="nav-logo-img footer-logo-img" width="130"
+                        height="52" />
+                </a>
+                <p class="footer-tagline">
+                    A grassroots NGO committed to educational sponsorship,
+                    vocational empowerment, and clean water access for rural communities.
+                </p>
+                <p class="footer-hadith">
+                    <span class="footer-hadith-icon">🌿</span>
+                    "The best of people are those who bring the most benefit to the rest of mankind."
+                    <em>(Al-Dāraquṭnī)</em>
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Pages</div>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Programs</div>
+                <ul class="footer-links">
+                    <li><a href="programs.html#education">Educational Sponsorship</a></li>
+                    <li><a href="programs.html#vocational">Vocational Training</a></li>
+                    <li><a href="programs.html#water">Water &amp; Rural Access</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Contact</div>
+                <p class="footer-contact-item">📧 info@pick-one.org</p>
+                <p class="footer-contact-item">📞 +234 800 000 0000</p>
+                <p class="footer-contact-item">📍 Nigeria</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                &copy; <span id="footer-year"></span> Pick-One Initiative. All rights reserved.
+            </p>
+            <span class="footer-badge">🌱 Shaping a Better Tomorrow</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Dynamically set copyright year — never goes stale
+    var yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>

@@ -1,0 +1,360 @@
+/* ============================================================
+   layout.css — Header, footer, nav, grid wrappers
+   Pick-One Initiative
+   ============================================================ */
+
+/* 1. HEADER
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.site-header.scrolled {
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  /* White background logo on dark header */
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-sm);
+  padding: 3px 6px;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 0.9;
+}
+
+.footer-logo-img {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.35em 0.6em;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Donate button in desktop nav */
+.nav-donate-btn {
+  margin-left: 0.5rem;
+  padding: 0.5em 1.25em;
+}
+
+/* Donate link in mobile nav */
+.nav-donate-mobile {
+  color: var(--color-accent) !important;
+  font-weight: 700;
+}
+
+/* CTA button in nav */
+.nav-cta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55em 1.25em;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-radius: var(--border-radius-pill);
+  transition: var(--transition);
+}
+
+.nav-cta:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+}
+
+.nav-hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-mobile.open {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-mobile a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.7em 0.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.nav-mobile a:last-child {
+  border-bottom: none;
+}
+
+.nav-mobile a:hover,
+.nav-mobile a.active {
+  color: var(--color-accent);
+}
+
+/* 2. FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.75);
+  padding-block: var(--spacing-xl) var(--spacing-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand .nav-logo {
+  display: block;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 300px;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-contact-item {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-badge {
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* 3. SECTION WRAPPERS
+   ============================================================ */
+.section-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header.centered {
+  text-align: center;
+}
+
+.section-header .section-text {
+  margin-top: var(--spacing-md);
+}
+
+.section-header.centered .section-text {
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* 4. TWO-COLUMN CONTENT LAYOUT
+   ============================================================ */
+.content-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.content-split.reverse {
+  direction: rtl;
+}
+
+.content-split.reverse > * {
+  direction: ltr;
+}
+
+/* 5. RESPONSIVE FOOTER & HEADER
+   ============================================================ */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-split {
+    grid-template-columns: 1fr;
+  }
+
+  .content-split.reverse {
+    direction: ltr;
+  }
+}

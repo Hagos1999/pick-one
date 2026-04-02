@@ -1,0 +1,381 @@
+/* ============================================================
+   main.css — Global styles: reset, variables, typography, utilities
+   Pick-One Initiative
+   ============================================================ */
+
+/* 1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================================ */
+:root {
+  /* Colours */
+  --color-primary: #1a3d2b; /* deep forest green */
+  --color-secondary: #2e7d52; /* mid green */
+  --color-accent: #5bbf8a; /* bright mint */
+  --color-text: #1c1c1c; /* near-black body */
+  --color-text-muted: #5a6472; /* muted grey */
+  --color-bg: #f9f6f0; /* warm off-white */
+  --color-white: #ffffff;
+  --color-mint-bg: #eaf5ee; /* mint section bg */
+  --color-green-bg: #1a3d2b; /* dark green section bg */
+  --color-border: #d8e8de; /* subtle border */
+
+  /* Typography */
+  --font-heading: "Bricolage Grotesque", sans-serif;
+  --font-body: "Inter Tight", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
+
+  /* Shape */
+  --border-radius: 0.75rem;
+  --border-radius-sm: 0.375rem;
+  --border-radius-lg: 1.25rem;
+  --border-radius-pill: 9999px;
+
+  /* Effects */
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.14);
+  --transition: all 0.3s ease;
+}
+
+/* 2. RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 3. TYPOGRAPHY SCALE
+   ============================================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.display-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35em 1em;
+  border-radius: var(--border-radius-pill);
+  margin-bottom: var(--spacing-md);
+}
+
+.section-tag.is-dark {
+  background-color: var(--color-mint-bg);
+  color: var(--color-primary);
+}
+
+.section-tag.is-white {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-tag.is-green {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* 4. LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.section-space {
+  padding-block: var(--spacing-xl);
+}
+
+.section-space-lg {
+  padding-block: var(--spacing-2xl);
+}
+
+.section-space-top {
+  padding-top: var(--spacing-xl);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: var(--color-white);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-on-dark {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+.gap-md {
+  gap: var(--spacing-md);
+}
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+.mt-xl {
+  margin-top: var(--spacing-xl);
+}
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+.max-w-md {
+  max-width: 560px;
+}
+.max-w-lg {
+  max-width: 720px;
+}
+
+/* 5. SECTION BACKGROUNDS
+   ============================================================ */
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-default {
+  background-color: var(--color-bg);
+}
+.bg-mint {
+  background-color: var(--color-mint-bg);
+}
+.bg-green {
+  background-color: var(--color-green-bg);
+}
+
+/* 6. SCROLL REVEAL ANIMATION
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* 7. PAGE HERO BANNER (shared across inner pages)
+   ============================================================ */
+.page-hero {
+  background-color: var(--color-green-bg);
+  padding: calc(var(--spacing-xl) + 4rem) var(--spacing-lg) var(--spacing-xl);
+  text-align: center;
+}
+
+.page-hero .section-title {
+  color: var(--color-white);
+  margin-top: var(--spacing-sm);
+}
+
+.page-hero .section-text {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: var(--spacing-md);
+}
+
+/* 8. DIVIDER
+   ============================================================ */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  margin-block: var(--spacing-lg);
+}
+
+.divider-green {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius-pill);
+  margin-block: var(--spacing-md);
+}
+
+/* 9. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+  }
+
+  .grid-3,
+  .grid-2,
+  .grid-auto {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding-inline: var(--spacing-md);
+  }
+}

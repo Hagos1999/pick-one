@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Impact — Pick-One Initiative</title>
+    <meta name="description"
+        content="See the measurable impact Pick-One has made: 20+ individuals supported, 25 wells dug, 30 vocational trainees, and counting." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Our Impact — Pick-One Initiative" />
+    <meta property="og:description" content="See the measurable impact Pick-One has made: 20+ individuals supported, 25 wells dug, 30 vocational trainees, and counting." />
+    <meta property="og:image" content="assets/images/logo.jpeg" />
+    <meta property="og:url" content="https://pick-one.vercel.app/impact" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Impact — Pick-One Initiative" />
+    <meta name="twitter:description" content="See the measurable impact Pick-One has made: 20+ individuals supported, 25 wells dug, 30 vocational trainees, and counting." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages/impact.css" />
+
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main id="main-content">
+
+        <!-- ═══════════════════ PAGE HERO ═══════════════════ -->
+        <section class="page-hero video-bg-container" aria-labelledby="impact-heading">
+            <video class="video-bg" autoplay loop muted playsinline>
+                <source
+                    src="https://cdn.prod.website-files.com/69563d0838513c9b12f34691%2F69663929489d1c32fbc2310a_Kindact-Impact-Video_mp4.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="container">
+                <span class="section-tag is-white">Our Impact So Far</span>
+                <h1 id="impact-heading" class="section-title">
+                    Milestones That Move Us Forward
+                </h1>
+                <p class="section-text max-w-md mx-auto">
+                    A snapshot of the progress we've made with communities,
+                    partners, and supporters by our side.
+                </p>
+            </div>
+        </section>
+
+        <!-- AYĀH BANNER: Reward of good deeds -->
+        <section class="ayah-banner" aria-label="Quranic verse on good deeds">
+            <div class="container">
+                <p class="ayah-arabic">فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ</p>
+                <p class="ayah-translation">“Then whoever does an atom’s weight of good will see it.”</p>
+                <span class="ayah-source">Qurʼān 99:7</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ FULL STATS GRID ═══════════════════ -->
+        <section class="full-stats section-space" aria-label="Full impact statistics">
+            <div class="container">
+                <div class="section-header centered reveal">
+                    <span class="section-tag is-dark">Numbers That Matter</span>
+                    <h2 class="section-title mt-sm">The Results Speak</h2>
+                </div>
+
+                <div class="stats-grid mt-xl">
+
+                    <div class="stat-block reveal reveal-delay-1">
+                        <span class="stat-counter" data-counter data-target="20" data-suffix="+">20+</span>
+                        <span class="stat-label">Individuals Directly Supported</span>
+                        <span class="stat-sublabel">Through educational sponsorship &amp; direct aid</span>
+                    </div>
+
+                    <div class="stat-block reveal reveal-delay-2">
+                        <span class="stat-counter" data-counter data-target="25">25</span>
+                        <span class="stat-label">Wells Dug</span>
+                        <span class="stat-sublabel">Across extremely rural communities</span>
+                    </div>
+
+                    <div class="stat-block reveal reveal-delay-3">
+                        <span class="stat-counter">X,000+</span>
+                        <span class="stat-label">People with Clean Water Access</span>
+                        <span class="stat-sublabel">(Total to be updated)</span>
+                    </div>
+
+                    <div class="stat-block reveal reveal-delay-1">
+                        <span class="stat-counter" data-counter data-target="30">30</span>
+                        <span class="stat-label">Vocational Trainees</span>
+                        <span class="stat-sublabel">Equipped with practical, income-generating skills</span>
+                    </div>
+
+                    <div class="stat-block reveal reveal-delay-2">
+                        <span class="stat-counter" data-counter data-target="5">5</span>
+                        <span class="stat-label">New Wells Targeted</span>
+                        <span class="stat-sublabel">In underserved communities — next phase</span>
+                    </div>
+
+                    <div class="stat-block reveal reveal-delay-3">
+                        <span class="stat-counter" data-counter data-target="3">3</span>
+                        <span class="stat-label">Programme Pillars</span>
+                        <span class="stat-sublabel">Education · Vocational · Water &amp; Rural Access</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ SUCCESS STORIES ═══════════════════ -->
+        <section class="success-stories section-space" aria-labelledby="stories-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag is-dark">Real Stories</span>
+                    <h2 id="stories-heading" class="section-title mt-sm">
+                        When Change Becomes Personal
+                    </h2>
+                    <p class="section-text mt-md">
+                        Discover the journeys shaped by our work across communities.
+                    </p>
+                </div>
+
+                <!-- Story 1 -->
+                <article class="story-card-full reveal reveal-delay-1">
+                    <div class="story-card-portrait" aria-hidden="true">👧</div>
+                    <div class="story-card-body">
+                        <div class="story-card-meta">Educational Sponsorship</div>
+                        <h3 class="story-card-name">One of Our Beneficiaries</h3>
+                        <p>
+                            When we first met one of our beneficiaries, she was at risk of
+                            dropping out of secondary school. Her family had fallen on hard
+                            times, and school fees felt impossibly out of reach. Pick-One
+                            stepped in — covering her fees, providing her with the materials
+                            she needed, and pairing her with a mentor who checked in regularly.
+                        </p>
+                        <p class="mt-sm">
+                            She went on to sit her final examinations and passed with
+                            distinction. She is currently completing a vocational course
+                            in fashion design and has spoken about one day employing others
+                            from her community.
+                        </p>
+                        <blockquote class="story-quote">
+                            "I didn't think anyone would invest in me. Pick-One changed
+                            that thinking entirely. Now I invest in myself every day."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Story 2 -->
+                <article class="story-card-full reveal reveal-delay-2">
+                    <div class="story-card-portrait" aria-hidden="true">👨‍🔧</div>
+                    <div class="story-card-body">
+                        <div class="story-card-meta">Vocational Training &amp; Empowerment</div>
+                        <h3 class="story-card-name">Another of Our Beneficiaries</h3>
+                        <p>
+                            One of our vocational trainees came to us with no formal
+                            qualifications and no clear path forward. Within six months
+                            of joining our welding and electrical programme, he had
+                            completed his certification and secured his first contract
+                            with a local construction firm.
+                        </p>
+                        <p class="mt-sm">
+                            Today, he runs a small workshop employing two assistants —
+                            both of whom he recommended for our next training cohort.
+                            This is what sustainable, community-internal growth looks like.
+                        </p>
+                        <blockquote class="story-quote">
+                            "I didn't need charity. I needed a chance. That's exactly
+                            what Pick-One gave me."
+                        </blockquote>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════ WELL PHOTO PLACEHOLDERS ═══════════════════ -->
+        <section class="well-photos section-space" aria-labelledby="wells-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag is-dark">In the Field</span>
+                    <h2 id="wells-heading" class="section-title mt-sm">From the Wells We've Built</h2>
+                    <p class="section-text mt-md max-w-lg">
+                        Each of these 25 wells represents a community with new access to
+                        clean water — and a future with fewer lost hours, fewer illnesses,
+                        and more possibility.
+                    </p>
+                </div>
+
+                <div class="photo-grid mt-xl">
+
+                    <div class="photo-placeholder reveal reveal-delay-1">
+                        <!-- Replace src with actual well photo -->
+                        <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+                        <span class="photo-placeholder-label">Well Photo — Community 1</span>
+                        <span class="photo-placeholder-note">Photo coming soon</span>
+                    </div>
+
+                    <div class="photo-placeholder reveal reveal-delay-2">
+                        <!-- Replace src with actual well photo -->
+                        <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+                        <span class="photo-placeholder-label">Well Photo — Community 2</span>
+                        <span class="photo-placeholder-note">Photo coming soon</span>
+                    </div>
+
+                    <div class="photo-placeholder reveal reveal-delay-3">
+                        <!-- Replace src with actual well photo -->
+                        <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+                        <span class="photo-placeholder-label">Well Photo — Community 3</span>
+                        <span class="photo-placeholder-note">Photo coming soon</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ INTERACTIVE MAP ═══════════════════ -->
+        <section class="section-space bg-alt" aria-labelledby="map-heading">
+            <div class="container">
+                <div class="section-header centered reveal">
+                    <span class="section-tag is-dark">Our Reach</span>
+                    <h2 id="map-heading" class="section-title mt-sm">Where Water Flows</h2>
+                    <p class="section-text mt-md max-w-lg mx-auto">
+                        Explore the 25 active well locations across Bauchi State, Nigeria. Watch the map journey through
+                        the communities transformed by your support.
+                    </p>
+                </div>
+
+                <div class="map-section-grid reveal reveal-delay-2">
+                    <div class="map-locations-sidebar">
+                        <div class="map-locations-header">
+                            <h3>Project Sites</h3>
+                            <p>Select a community to view details</p>
+                        </div>
+                        <ul id="locations-list" class="locations-list" aria-label="List of well locations">
+                            <!-- Populated by JavaScript -->
+                        </ul>
+                    </div>
+
+                    <div class="map-container-wrapper">
+                        <div id="wells-map" class="wells-map" aria-label="Interactive map of well locations"></div>
+                        <div class="map-overlay-stats">
+                            <div class="map-stat">
+                                <strong>25</strong>
+                                <span>Active Wells</span>
+                            </div>
+                            <div class="map-stat">
+                                <strong>Bauchi</strong>
+                                <span>Primary Region</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ STUDENT PHOTO PLACEHOLDERS ═══════════════════ -->
+        <section class="student-photos section-space" aria-labelledby="students-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag is-dark">Faces of Change</span>
+                    <h2 id="students-heading" class="section-title mt-sm">Our Beneficiaries</h2>
+                </div>
+
+                <div class="student-photo-grid mt-xl">
+
+                    <div class="photo-placeholder reveal reveal-delay-1">
+                        <!-- Replace src with actual beneficiary photo -->
+                        <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+                        <span class="photo-placeholder-label">Beneficiary Photo — Student 1</span>
+                        <span class="photo-placeholder-note">Photo coming soon</span>
+                    </div>
+
+                    <div class="photo-placeholder reveal reveal-delay-2">
+                        <!-- Replace src with actual beneficiary photo -->
+                        <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+                        <span class="photo-placeholder-label">Beneficiary Photo — Student 2</span>
+                        <span class="photo-placeholder-note">Photo coming soon</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ OBJECTIVES ═══════════════════ -->
+        <section class="objectives" aria-labelledby="objectives-heading">
+            <div class="container">
+                <div class="section-header centered reveal">
+                    <span class="section-tag is-white">Looking Ahead</span>
+                    <h2 id="objectives-heading" class="section-title text-white mt-sm">
+                        Our Goals &amp; Objectives
+                    </h2>
+                    <p class="section-text mt-md text-on-dark">
+                        Where we are going — and what we're committed to achieving.
+                    </p>
+                </div>
+
+                <div class="objectives-list">
+
+                    <div class="objective-card reveal reveal-delay-1">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Sponsor at least 10 additional students into secondary and
+                            tertiary education annually, with dedicated mentorship and
+                            progress tracking throughout.
+                        </p>
+                    </div>
+
+                    <div class="objective-card reveal reveal-delay-2">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Train and certify 20 additional individuals in income-generating
+                            vocational skills, with post-training mentorship and livelihood
+                            support to ensure successful transitions to self-employment or
+                            formal employment.
+                        </p>
+                    </div>
+
+                    <div class="objective-card reveal reveal-delay-3">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Dig and maintain water wells in at least 5 new rural communities,
+                            expanding clean water access to underserved populations who
+                            currently have no reliable source.
+                        </p>
+                    </div>
+
+                    <div class="objective-card reveal reveal-delay-4">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Build a sustainable community-led maintenance network for all
+                            existing wells, ensuring water access remains uninterrupted long
+                            after Pick-One's direct involvement concludes.
+                        </p>
+                    </div>
+
+                    <div class="objective-card reveal reveal-delay-1">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Establish a formal alumni network of beneficiaries who actively
+                            mentor the next cohort — creating a self-sustaining cycle of
+                            community upliftment.
+                        </p>
+                    </div>
+
+                    <div class="objective-card reveal reveal-delay-2">
+                        <span class="objective-check" aria-hidden="true">✅</span>
+                        <p class="objective-text">
+                            Diversify funding sources through partnerships with our partners,
+                            government grants, and diaspora giving, reducing reliance on any
+                            single donor stream.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HADITH: On sadaqah jariyah before CTA -->
+        <section class="ayah-banner" aria-label="Hadith on ongoing charity">
+            <div class="container">
+                <p class="ayah-arabic ayah-arabic--sm">“When a person dies, all his deeds end except three:
+                    sadaqah jāriyah (ongoing charity), beneficial knowledge, and a righteous child who prays for him.”
+                </p>
+                <p class="ayah-translation">Every well dug, every child educated — this is sadaqah jāriyah in action.
+                </p>
+                <span class="ayah-source">Sahīh Muslim 1631</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ CTA ═══════════════════ -->
+        <section class="section-space bg-default" aria-label="Support Pick-One">
+            <div class="container">
+                <div class="cta-banner video-bg-container reveal">
+                    <video class="video-bg" autoplay loop muted playsinline>
+                        <source
+                            src="https://cdn.prod.website-files.com/69563d0838513c9b12f34691%2F696469eaa0ca3a5f693431a0_kindact-cta-video_mp4.mp4"
+                            type="video/mp4">
+                    </video>
+                    <span class="section-tag is-green">Fuel the Work</span>
+                    <h2 class="section-title mt-sm">Help Us Write the Next Chapter</h2>
+                    <p class="section-text mt-sm">
+                        Every well dug, every fee paid, every skill taught — it starts
+                        with someone deciding to act. Will you be that someone?
+                    </p>
+                    <div class="btn-group">
+                        <a href="contact.html" class="btn btn-donate btn-lg">
+                            Donate Now
+                        </a>
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            Contact Us <span class="btn-arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/components.js"></script>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="assets/js/pages/impact.js"></script>
+</body>
+
+</html>
